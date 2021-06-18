@@ -16,6 +16,7 @@ static const int HX_SCK_PIN = 6;
 HX711 scale;
 
 float calibrationFactor = -29220; //-29220 worked for my 200 kg max scale setup
+long zeroFactor = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -30,7 +31,7 @@ void setup() {
   scale.set_scale();
   scale.tare(); //Reset the scale to 0
 
-  long zeroFactor = scale.read_average(); //Get a baseline reading
+  zeroFactor = scale.read_average(); //Get a baseline reading
   Serial.print("Zero factor: "); //This can be used to remove the need to tare the scale. Useful in permanent scale projects.
   Serial.println(zeroFactor);
 }
@@ -43,7 +44,9 @@ void loop() {
   Serial.print(scale.get_units(), 2);
   Serial.print(" kg");
   Serial.print(" calibration_factor: ");
-  Serial.println(calibrationFactor);
+  Serial.print(calibrationFactor);
+  Serial.print(" zeroFactor: ");
+  Serial.println(zeroFactor);
 
   if(Serial.available())
   {
@@ -54,5 +57,8 @@ void loop() {
       calibrationFactor -= 10;
     else if(temp == 't')
       scale.tare();
+      zeroFactor = scale.read_average(); //Get a baseline reading
+      Serial.print("Zero factor: "); //This can be used to remove the need to tare the scale. Useful in permanent scale projects.
+      Serial.println(zeroFactor);
   }
 }
