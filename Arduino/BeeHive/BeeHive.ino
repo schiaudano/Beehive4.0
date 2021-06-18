@@ -8,7 +8,7 @@ i - restituisce l'elenco dei comandi con la descrizione
 a - restituisce temperatura, umidità e peso
 w - restituisce il peso in kg
 t - azzera la bilancia
-e - restituisce temperatura e unidità
+e - restituisce temperatura e umidità
 n - cambia il nome del blouetooth, minimo due caratteri: n {nome bluetooth}
 p - cambia la password del blouetooth, minimo quattro caratteri: p {password bluetooth}
 
