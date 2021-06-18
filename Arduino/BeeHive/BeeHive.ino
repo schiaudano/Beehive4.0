@@ -9,8 +9,8 @@ a - restituisce temperatura, umidità e peso
 w - restituisce il peso in kg
 t - azzera la bilancia
 e - restituisce temperatura e umidità
-n - cambia il nome del blouetooth, minimo due caratteri: n {nome bluetooth}
-p - cambia la password del blouetooth, minimo quattro caratteri: p {password bluetooth}
+n - cambia il nome del bluetooth, minimo due caratteri: n {nome bluetooth}
+p - cambia la password del bluetooth, minimo quattro caratteri: p {password bluetooth}
 
 
 */
